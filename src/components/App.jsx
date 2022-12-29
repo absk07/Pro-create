@@ -10,7 +10,7 @@ import generatePalette from '../helpers/colorHelper';
 
 function App() {
   const savedPalettes = JSON.parse(window.localStorage.getItem('palettes'));
-  const [palette, setPalette] = useState((savedPalettes.length > 0) ? savedPalettes : seedColors);
+  const [palette, setPalette] = useState(savedPalettes || seedColors);
   const location = useLocation();
   const [displayLocation, setDisplayLocation] = useState(location);
   const [transitionStage, setTransistionStage] = useState("fadeIn");
